@@ -216,17 +216,35 @@ window.onload = function(){
   //   new google.maps.LatLng(51.52780209534304,-0.1154213419433745)
   // ];
 
+  var efforts = $.getJSON('/fundraising_status.json',function(data){
+    //Success
+    console.info(data);
+    
+    var percent_complete = Math.round(data['raised_clean'] / data['target_clean'] * 100);
+    console.info(percent_complete);
+
+    return data
+  }).error(function(){
+    //Error
+  });
+
   // console.info(marathonRoute.length);
 
   //26.2
-  console.info(Math.round(marathonRoute.length / 26.2))
+  console.info("Number of markers per mile: " + Math.round(marathonRoute.length / 26.2));
 
+  //Complete Route
   var plotMarathonRoute = [];
   $(marathonRoute).each(function(){
     plotMarathonRoute.push(
       new google.maps.LatLng(this[0],this[1])
     )
   });
+
+  //Completed Route
+  for(point in marathonRoute){
+
+  }
 
   var lineOpts = { 
     path: plotMarathonRoute,
@@ -261,6 +279,7 @@ window.onload = function(){
 
   // var courseLine = new google.maps.Polyline(courseOpts);
   var fundLine = new google.maps.Polyline(lineOpts);
+  
   console.info(fundLine.inKm());
   console.info(fundLine.Distance());
 }

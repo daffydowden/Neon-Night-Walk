@@ -5,6 +5,8 @@ class Whizzrun < Padrino::Application
 
   enable :sessions
 
+  require 'open-uri'
+  require 'json'
   ##
   # Caching support
   #
@@ -58,5 +60,17 @@ class Whizzrun < Padrino::Application
   #
   get '/' do
     render :index
+  end
+
+  get '/fundraising_status.json' do
+    doc = Nokogiri::HTML(open("http://www.justgiving.com/teamsparklemotion"))
+    @details = {}
+
+    @details[:target] = doc.css("#donationInfo strong")[0].text
+    @details[:raised] = doc.css("#donationInfo strong")[1].text
+    @details[:target_clean] = @details[:target].scan(/\d+\,?\d+?\.\d{2}$/).first.gsub(',','')
+    @details[:raised_clean] = @details[:raised].scan(/\d+\,?\d+?\.\d{2}$/).first.gsub(',','')
+
+    @details.to_json
   end
 end
