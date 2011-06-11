@@ -46,6 +46,7 @@ window.onload = function(){
     return d;
   }
 
+  // Create a new map
   var map;
   var london = new google.maps.LatLng(51.527382,-0.098662);
   //http://maps.google.co.uk/maps?q=london&ie=UTF8&hq=&hnear=Westminster,+London,+United+Kingdom&gl=uk&ll=&spn=0.247276,0.451126&z=12&iwloc=A
@@ -189,7 +190,7 @@ window.onload = function(){
     }
   };
    
-  map = new google.maps.Map(document.getElementById("map_canvas"),
+  var map = new google.maps.Map(document.getElementById("map_canvas"),
       mapOptions);
       
   var styledMapOptions = {
@@ -202,34 +203,7 @@ window.onload = function(){
   map.mapTypes.set('neonwalk', nightWalkMap);
   map.setMapTypeId('neonwalk');
 
-
-  //Plot the Route
-  // var lineCoords = [
-  //   new google.maps.LatLng(51.525666114871676,-0.08752636818849169),
-  //   new google.maps.LatLng(51.52481169462598,-0.09336285500489794),
-  //   new google.maps.LatLng(51.523316420617064,-0.09859852700196825),
-  //   new google.maps.LatLng(51.52246195628093,-0.10186009316407763),
-  //   new google.maps.LatLng(51.52262216956523,-0.10349087624513231),
-  //   new google.maps.LatLng(51.52203471810045,-0.10709576516114794),
-  //   new google.maps.LatLng(51.52347663089519,-0.10838322548829638),
-  //   new google.maps.LatLng(51.52620011938361,-0.11233143715821825),
-  //   new google.maps.LatLng(51.52780209534304,-0.1154213419433745)
-  // ];
-
-  var efforts = $.getJSON('/fundraising_status.json',function(data){
-    //Success
-    console.info(data);
-    
-    var percent_complete = Math.round(data['raised_clean'] / data['target_clean'] * 100);
-    console.info(percent_complete);
-
-    return data
-  }).error(function(){
-    //Error
-  });
-
   // console.info(marathonRoute.length);
-
   //26.2
   console.info("Number of markers per mile: " + Math.round(marathonRoute.length / 26.2));
 
@@ -249,37 +223,38 @@ window.onload = function(){
   var lineOpts = { 
     path: plotMarathonRoute,
     map: map,
-    strokeColor: "#FFFF00",
-    strokeOpacity: 1.0,
+    strokeColor: "#FFFFFF",
+    strokeOpacity: 0.5,
     strokeWeight: 10
   };
 
-  // var courseCoords = [
-  //   new google.maps.LatLng(51.525666114871676,-0.08752636818849169),
-  //   new google.maps.LatLng(51.52481169462598,-0.09336285500489794),
-  //   new google.maps.LatLng(51.523316420617064,-0.09859852700196825),
-  //   new google.maps.LatLng(51.52246195628093,-0.10186009316407763),
-  //   new google.maps.LatLng(51.52262216956523,-0.10349087624513231),
-  //   new google.maps.LatLng(51.52203471810045,-0.10709576516114794),
-  //   new google.maps.LatLng(51.52347663089519,-0.10838322548829638),
-  //   new google.maps.LatLng(51.52620011938361,-0.11233143715821825),
-  //   new google.maps.LatLng(51.52780209534304,-0.1154213419433745),
-  //   new google.maps.LatLng(51.52977778806741,-0.11585049538575731),
-  //   new google.maps.LatLng(51.53143303218039,-0.11413388161622606),
-  //   new google.maps.LatLng(51.53073890487953,-0.12220196633302294),
-  //   new google.maps.LatLng(51.52785549357099,-0.12924008278810106)
-  // ];
-  // var courseOpts = { 
-  //   path: courseCoords,
-  //   map: map,
-  //   strokeColor: "#000",
-  //   strokeOpacity: 0.5,
-  //   strokeWeight: 8
-  // };
-
-  // var courseLine = new google.maps.Polyline(courseOpts);
+  // Plot the complete route
   var fundLine = new google.maps.Polyline(lineOpts);
   
   console.info(fundLine.inKm());
   console.info(fundLine.Distance());
 }
+
+$(document).ready(function(){
+  // Get the fund raising data from JG
+  var efforts = $.parseJSON($.ajax({
+      url: "/fundraising_status.json",
+      global: false,
+      type: "GET",
+      dataType: "json",
+      async:false,
+      success: function(msg){
+         //alert(msg);
+      }
+    }
+  ).responseText);
+
+  // Determine the percentage
+  efforts['percentage'] = Math.round((efforts['raised_clean']/efforts['target_clean'])*100) ;
+  console.info(efforts['percentage']);
+
+  var current_location = Math.round(marathonRoute.length / efforts['percentage']);
+  console.info(current_location);
+
+  
+});

@@ -49,6 +49,6 @@ html
         text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #ff00de, 0 0 9px #ff00de, 0 0 10px #ff00de, 0 0 12px #ff00de, 0 0 15px #ff00de;
       }
       
-    == javascript_include_tag 'LondonMarathonRoute','application', 'http://maps.google.com/maps/api/js?sensor=false',:jquery
+    == javascript_include_tag :jquery,'LondonMarathonRoute','application', 'http://maps.google.com/maps/api/js?sensor=false'
   body
     == yield_content :body
