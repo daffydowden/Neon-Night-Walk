@@ -221,10 +221,10 @@ $(document).ready(function(){
   $(marathonRoute).each(function(){
     plotMarathonRoute.push(
       new google.maps.LatLng(this[0],this[1])
-    )
+    );
   });
 
-  var lineOpts = { 
+  var marathonRouteLineOpts = { 
     path: plotMarathonRoute,
     map: map,
     strokeColor: "#FFFFFF",
@@ -233,8 +233,27 @@ $(document).ready(function(){
   };
 
   // Plot the complete route
-  var completeRoute = new google.maps.Polyline(lineOpts);
+  var completeRoute = new google.maps.Polyline(marathonRouteLineOpts);
+
+  // Create the completed route
+  var completedRoute = [];
+  for(var i=0;i<current_location;i++){
+    completedRoute.push(
+      new google.maps.LatLng(marathonRoute[i][0],marathonRoute[i][1])
+    );
+  }
+  
+  var completedRouteLineOpts = { 
+    path: completedRoute,
+    map: map,
+    strokeColor: "#FFFF00",
+    strokeOpacity: 1.0,
+    strokeWeight: 10
+  };
+  // Plot the complete route
+  var completedRoute = new google.maps.Polyline(completedRouteLineOpts);
 
   // Set the maps center to be the current percentage
   map.setCenter(new google.maps.LatLng(marathonRoute[current_location][0],marathonRoute[current_location][1]));
+
 });
