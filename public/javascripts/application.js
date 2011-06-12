@@ -286,16 +286,17 @@ $(document).ready(function(){
   });
 
   // Finish Marker
+  var finish_marker_origin = (efforts['percentage'] >= 100) ? new google.maps.Point(554,6) : new google.maps.Point(554,106);
   var finish_marker_image = new google.maps.MarkerImage(
     'images/neonMapMarkers_sprite.png',
     new google.maps.Size(73,100), // Size
-    new google.maps.Point(644,6), // Origin
+    finish_marker_origin, // Origin
     new google.maps.Point(37,94) // Anchor
   );
   var finish_marker = new google.maps.Marker({
-    position: new google.maps.LatLng(marathonRoute[marathonRoute.length][0],marathonRoute[marathonRoute.length][1]),
+    position: new google.maps.LatLng(marathonRoute[marathonRoute.length-1][0],marathonRoute[marathonRoute.length-1][1]),
     map: map,
-    icon: current_position_marker_image
+    icon: finish_marker_image
   });
 
   // TEST Markers
