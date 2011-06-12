@@ -63,6 +63,11 @@ class Whizzrun < Padrino::Application
     render :index
   end
 
+  # Thank-you page
+  get '/thank-you' do
+    render :thank_you
+  end
+
   get '/fundraising_status.json' do
     doc = Nokogiri::HTML(open("http://www.justgiving.com/teamsparklemotion"))
     @details = {}
