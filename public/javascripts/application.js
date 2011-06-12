@@ -180,7 +180,14 @@ $(document).ready(function(){
     zoom: 15,
     center: london,
     mapTypeControlOptions: {
-       mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'neonwalk']
+      mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'neonwalk'],
+      style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+    },
+    streetViewControl: false,
+    navigationControl: true,
+    navigationControlOptions: {
+      position: google.maps.ControlPosition.TOP_RIGHT,
+      style: google.maps.NavigationControlStyle.SMALL
     }
   };
    
