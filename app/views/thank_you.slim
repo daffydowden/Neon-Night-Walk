@@ -1,0 +1,37 @@
+# Page Title
+- content_for(:title, "WhizzKids Neon Night Walk 2010 - Thank-you from Team Sparklemotion")
+
+# Body Content
+- content_for :body do
+  #thanks-container
+    h1 Thank-You!
+
+    #total_raised
+      p 
+        | Raised so far
+          <span id="current"></span>
+      p 
+        | Target
+          <span id="target"></span>
+
+    #thanks-text
+      p
+        | All of us from Team Sparklemotion would like to 
+          thank-you for your kind and generous donation. 
+          Please help us in meeting our target by sharing our site with 
+          your friends and colleagues, by clicking on the links below.
+    
+    #social-networks
+      a#twitter href="http://www.twitter.com" title="Post on Twitter"
+      a#facebook href="facebook" title="Post on Facebook"
+
+  script src="http://platform.twitter.com/anywhere.js?id=bBGPFyzkn6ICebj3bYNAQQ&v=1" type="text/javascript"
+  javascript:
+    twttr.anywhere(function (T) {
+      T("#twitter").tweetBox({
+        height: 100,
+        width: 400,
+        defaultContent: "I just donated to Team Sparklemotion"
+      });
+
+    });    

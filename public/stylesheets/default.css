@@ -26,7 +26,7 @@ body {
   left: 20px;
   width: 300px; }
 
-#text {
+#text, #thanks-text {
   height: auto;
   width: 300px;
   background: #fff;
@@ -45,6 +45,10 @@ h1 {
   text-transform: uppercase;
   color: white;
   text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #ff00de, 0 0 9px #ff00de, 0 0 10px #ff00de, 0 0 12px #ff00de, 0 0 15px #ff00de; }
+
+p {
+  font-size: 14px;
+  line-height: 1.5; }
 
 #total_raised {
   margin-top: 20px;
@@ -93,3 +97,53 @@ a#donate_btn:hover {
   border: 3px solid #fff;
   text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #66ff00,                 0 0 9px #66ff00, 0 0 10px #66ff00, 0 0 12px #66ff00, 0 0 15px #66ff00;
   box-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #66ff00,                0 0 9px #66ff00, 0 0 10px #66ff00, 0 0 12px #66ff00, 0 0 15px #66ff00,                inset 0 0 2px #fff, inset 0 0 4px #fff, inset 0 0 6px #fff, inset 0 0 8px #66ff00,                inset 0 0 9px #66ff00, inset 0 0 10px #66ff00, inset 0 0 12px #66ff00, inset 0 0 15px #66ff00; }
+
+#thanks-container {
+  width: 540px;
+  margin: 60px auto;
+  position: relative; }
+  #thanks-container h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 5em;
+    display: block;
+    z-index: 1;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border: 3px solid #fff;
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #66ff00,                   0 0 9px #66ff00, 0 0 10px #66ff00, 0 0 12px #66ff00, 0 0 15px #66ff00;
+    box-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #66ff00,                  0 0 9px #66ff00, 0 0 10px #66ff00, 0 0 12px #66ff00, 0 0 15px #66ff00,                  inset 0 0 2px #fff, inset 0 0 4px #fff, inset 0 0 6px #fff, inset 0 0 8px #66ff00,                  inset 0 0 9px #66ff00, inset 0 0 10px #66ff00, inset 0 0 12px #66ff00, inset 0 0 15px #66ff00; }
+  #thanks-container #total_raised {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #FFFF00,                  0 0 9px #FFFF00, 0 0 10px #FFFF00, 0 0 12px #FFFF00, 0 0 15px #FFFF00,                  inset 0 0 2px #fff, inset 0 0 4px #fff, inset 0 0 6px #fff, inset 0 0 8px #FFFF00,                  inset 0 0 9px #FFFF00, inset 0 0 10px #FFFF00, inset 0 0 12px #FFFF00, inset 0 0 15px #FFFF00; }
+    #thanks-container #total_raised p {
+      width: 50%;
+      display: block;
+      float: left;
+      text-align: center; }
+      #thanks-container #total_raised p span {
+        font-size: 1.8em;
+        clear: both; }
+  #thanks-container #thanks-text {
+    margin-top: 20px;
+    width: 100%; }
+  #thanks-container #social-networks {
+    margin: 0 20px 0;
+    overflow: hidden; }
+    #thanks-container #social-networks a {
+      display: block;
+      text-indent: -9000px;
+      display: block;
+      width: 250px;
+      height: 250px;
+      float: left; }
+    #thanks-container #social-networks #twitter {
+      background: url("../images/twitter-logo-square-neon.png") no-repeat 0 0; }
+    #thanks-container #social-networks #facebook {
+      background: url("../images/facebook-logo-square-neon.png") no-repeat 0 0; }
