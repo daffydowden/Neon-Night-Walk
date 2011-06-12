@@ -1,0 +1,46 @@
+html {
+  height: auto;
+}
+
+body {
+  height: auto;
+  margin: 0;
+  padding: 0;
+  font-family: helvetica, arial, san-serif;
+}
+
+#map_canvas {
+  height: auto;
+  position: absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  top:0;
+  z-index:0;
+}
+
+@media print {
+  #map_canvas {
+    height: 950px;
+  }
+}
+
+#text{
+  height:200px;
+  width:300px;
+  position:absolute;
+  top:20px;
+  left:20px;
+  z-index:1;
+  background:#fff;
+  background:rgba(255,255,255,0.75);
+  color:#222;
+  padding:20px;
+}
+h1 {
+  font-weight:normal;
+  margin:0;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #ff00de, 0 0 9px #ff00de, 0 0 10px #ff00de, 0 0 12px #ff00de, 0 0 15px #ff00de;
+}

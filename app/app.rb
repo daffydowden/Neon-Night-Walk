@@ -36,7 +36,8 @@ class Whizzrun < Padrino::Application
   # disable :sessions           # Disabled sessions by default (enable if needed)
   # disable :flash              # Disables rack-flash (enabled by default if Rack::Flash is defined)
   # layout  :my_layout          # Layout can be in views/layouts/foo.ext or views/foo.ext (default :application)
-  #
+  set :scss, :style => :compressed # default Scss style is :nested
+
 
   ##
   # You can configure for a specified environment like:
@@ -72,5 +73,10 @@ class Whizzrun < Padrino::Application
     @details[:raised_clean] = @details[:raised].scan(/\d+\,?\d+?\.\d{2}$/).first.gsub(',','')
 
     @details.to_json
+  end
+
+  #Convert SCSS to CSS
+  get '/stylesheets/default.css' do
+    scss 'stylesheets/default'
   end
 end

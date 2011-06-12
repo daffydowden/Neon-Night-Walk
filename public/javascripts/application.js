@@ -190,9 +190,6 @@ $(document).ready(function(){
       style: google.maps.NavigationControlStyle.SMALL
     }
   };
-   
-  var map = new google.maps.Map(document.getElementById("map_canvas"),
-      mapOptions);
       
   var styledMapOptions = {
     name: "Neon Walk"
@@ -201,6 +198,8 @@ $(document).ready(function(){
   var nightWalkMap = new google.maps.StyledMapType(
       purpleStyle, styledMapOptions);
  
+  var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+
   map.mapTypes.set('neonwalk', nightWalkMap);
   map.setMapTypeId('neonwalk');
 
