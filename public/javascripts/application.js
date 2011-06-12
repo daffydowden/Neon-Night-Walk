@@ -235,18 +235,26 @@ $(document).ready(function(){
   // Plot the complete route
   var completedRoute = new google.maps.Polyline(completedRouteLineOpts);
 
+  var completedDistance = completedRoute.Distance();
 
-  // Add markers to the map
+  // Add KM markers to the map
   // console.info(marathonRoute.length);
-  // Marathon length in miles = 26.2
-  // console.info("Number of markers per mile: " + Math.round(marathonRoute.length / 26.2));
-  // console.info("Number of array per km: " + Math.round(marathonRoute.length / 26.2));
-  $(completeRoute.KmMarkers()).each(function(){
-    // console.info(this);
-    var current_marker = new google.maps.Marker({
-      position: this,
-      map: map,
-    });
+  $(completeRoute.KmMarkers()).each(function(index,value){
+    if(index+1 >= completedDistance){
+      // Passed marker
+      var current_marker = new google.maps.Marker({
+        position: value,
+        map: map,
+        icon: 'http://gmaps-samples.googlecode.com/svn/trunk/markers/blue/blank.png'
+      });  
+    } else {
+      // future marker
+      var current_marker = new google.maps.Marker({
+        position: value,
+        map: map,
+        icon: 'http://gmaps-samples.googlecode.com/svn/trunk/markers/red/blank.png'
+      });
+    }
   });
 
   //test = completeRoute.KmMarkers();
