@@ -45,14 +45,15 @@ $(document).ready(function(){
     return d;
   }
 
-  // Every 1km place a marker
-  google.maps.Polyline.prototype.KmMarkers = function() {
+  // Create a point every 10%
+  google.maps.Polyline.prototype.PercentMarkers = function() {
     var dist = 0;
+    var distance_per_percent = (this.Distance() / 100);
     var markers = [];
     for (var i=1; i < this.getPath().getLength(); i++) {
       dist += this.getPath().getAt(i).distanceFrom(this.getPath().getAt(i-1));
 
-      if(dist >= 1.0){
+      if(dist >= (distance_per_percent*10)){
         markers.push(this.getPath().getAt(i));
         dist = 0;
       }
@@ -60,9 +61,7 @@ $(document).ready(function(){
     return markers;
   }
 
-
-
-  // Get the fund raising data from JG
+  // Get the fund raising data from JG via our server
   var efforts = $.parseJSON($.ajax({
       url: "/fundraising_status.json",
       global: false,
@@ -77,10 +76,10 @@ $(document).ready(function(){
 
   // Determine the percentage
   efforts['percentage'] = Math.round((efforts['raised_clean']/efforts['target_clean'])*100) ;
-  console.info(efforts['percentage']);
+  //console.info("Percent complete: " + efforts['percentage']);
 
-  var current_location = Math.round(marathonRoute.length / efforts['percentage']);
-  console.info(current_location);
+  var current_location = Math.round((marathonRoute.length / 100) * efforts['percentage']);
+  //console.info('Current point ' + current_location);
 
   // Create a new map
   var london = new google.maps.LatLng(51.527382,-0.098662);
@@ -234,31 +233,78 @@ $(document).ready(function(){
   };
   // Plot the complete route
   var completedRoute = new google.maps.Polyline(completedRouteLineOpts);
-
   var completedDistance = completedRoute.Distance();
 
-  // Add KM markers to the map
-  // console.info(marathonRoute.length);
-  $(completeRoute.KmMarkers()).each(function(index,value){
-    if(index+1 >= completedDistance){
-      // Passed marker
-      var current_marker = new google.maps.Marker({
-        position: value,
-        map: map,
-        icon: 'http://gmaps-samples.googlecode.com/svn/trunk/markers/blue/blank.png'
-      });  
-    } else {
+  // Marker sprite positions
+  var marker_off_origins = [new google.maps.Point(6,86),new google.maps.Point(66,86),new google.maps.Point(126,86),new google.maps.Point(186,86),new google.maps.Point(246,86),new google.maps.Point(306,86),new google.maps.Point(366,86),new google.maps.Point(426,86),new google.maps.Point(486,86)];
+  var marker_on_origins = [new google.maps.Point(6,6),new google.maps.Point(66,6),new google.maps.Point(126,6),new google.maps.Point(186,6),new google.maps.Point(246,6),new google.maps.Point(306,6),new google.maps.Point(366,6),new google.maps.Point(426,6),new google.maps.Point(486,6)];
+
+  // Add % markers to the map
+  $(completeRoute.PercentMarkers()).each(function(index,value){
+    if(index+1 >= (efforts['percentage']/10)){
       // future marker
-      var current_marker = new google.maps.Marker({
+      var marker_image = new google.maps.MarkerImage(
+        'images/neonMapMarkers_sprite.png',
+        new google.maps.Size(43,68), // Size
+        marker_off_origins[index], // Origin
+        new google.maps.Point(22,65) // Anchor
+      );
+
+      var marker = new google.maps.Marker({
         position: value,
         map: map,
-        icon: 'http://gmaps-samples.googlecode.com/svn/trunk/markers/red/blank.png'
+        icon: marker_image
+      });
+    } else {
+      // past marker
+      var marker_image = new google.maps.MarkerImage(
+        'images/neonMapMarkers_sprite.png',
+        new google.maps.Size(43,68),
+        marker_on_origins[index], 
+        new google.maps.Point(22,65)
+      );
+
+      var marker = new google.maps.Marker({
+        position: value,
+        map: map,
+        icon: marker_image
       });
     }
   });
 
-  //test = completeRoute.KmMarkers();
-  //console.info(typeof(test[0]));
+  // Add current position marker to map
+  var current_position_marker_image = new google.maps.MarkerImage(
+    'images/neonMapMarkers_sprite.png',
+    new google.maps.Size(73,100), // Size
+    new google.maps.Point(644,6), // Origin
+    new google.maps.Point(37,94) // Anchor
+  );
+  var current_position_marker = new google.maps.Marker({
+    position: new google.maps.LatLng(marathonRoute[current_location][0],marathonRoute[current_location][1]),
+    map: map,
+    icon: current_position_marker_image
+  });
+
+  // Finish Marker
+  var finish_marker_image = new google.maps.MarkerImage(
+    'images/neonMapMarkers_sprite.png',
+    new google.maps.Size(73,100), // Size
+    new google.maps.Point(644,6), // Origin
+    new google.maps.Point(37,94) // Anchor
+  );
+  var finish_marker = new google.maps.Marker({
+    position: new google.maps.LatLng(marathonRoute[marathonRoute.length][0],marathonRoute[marathonRoute.length][1]),
+    map: map,
+    icon: current_position_marker_image
+  });
+
+  // TEST Markers
+  // $(completeRoute.PercentMarkers()).each(function(index,value){
+  //   var test_marker = new google.maps.Marker({
+  //       position: value,
+  //       map: map
+  //     });
+  // });
 
   // Set the maps center to be the current percentage
   map.setCenter(new google.maps.LatLng(marathonRoute[current_location][0],marathonRoute[current_location][1]));
