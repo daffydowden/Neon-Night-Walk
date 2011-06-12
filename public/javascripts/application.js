@@ -187,6 +187,7 @@ $(document).ready(function(){
       mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'neonwalk'],
       style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
     },
+    scrollwheel: false,
     streetViewControl: false,
     navigationControl: true,
     navigationControlOptions: {
