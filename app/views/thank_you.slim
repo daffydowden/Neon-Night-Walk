@@ -23,7 +23,7 @@
     
     #social-networks
       a#twitter href="http://www.twitter.com" title="Post on Twitter"
-      a#facebook href="facebook" title="Post on Facebook"
+      a#facebook href="http://www.facebook.com" title="Post on your Facebook wall"
 
   script src="http://platform.twitter.com/anywhere.js?id=bBGPFyzkn6ICebj3bYNAQQ&v=1" type="text/javascript"
   javascript:
@@ -34,4 +34,30 @@
         defaultContent: "I just donated to Team Sparklemotion"
       });
 
-    });    
+    });
+  
+  script src="'//connect.facebook.net/en_US/all.js';" type="text/javascript"
+  javascript:
+    $(document).ready(function(){
+      $('#facebook').click(function(){
+        FB.ui(
+        {
+            method: 'feed',
+          name: 'Facebook Dialogs',
+          link: 'http://developers.facebook.com/docs/reference/dialogs/',
+          picture: 'http://fbrell.com/f8.jpg',
+          caption: 'Reference Documentation',
+          description: 'Dialogs provide a simple, consistent interface for applications to interface with users.',
+          message: 'Facebook Dialogs are easy!'
+          },
+          function(response) {
+            if (response && response.post_id) {
+               alert('Post was published.');
+            } else {
+              alert('Post was not published.');
+            }
+          }
+        );
+        return false;
+      });
+    });
