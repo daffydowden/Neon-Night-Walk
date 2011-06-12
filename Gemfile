@@ -6,6 +6,7 @@ gem 'rack-flash'
 gem 'thin' # or mongrel
 gem 'nokogiri'
 gem 'json'
+gem 'heroku'
 
 # Component requirements
 gem 'sass'
