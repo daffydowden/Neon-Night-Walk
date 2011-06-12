@@ -74,6 +74,10 @@ $(document).ready(function(){
     }
   ).responseText);
 
+  // Set the current total
+  $('#current').html(efforts['raised']);
+  $('#target').html(efforts['target']);
+
   // Determine the percentage
   efforts['percentage'] = Math.round((efforts['raised_clean']/efforts['target_clean'])*100) ;
   //console.info("Percent complete: " + efforts['percentage']);

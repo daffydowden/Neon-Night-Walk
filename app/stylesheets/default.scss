@@ -47,7 +47,7 @@ body {
 }
 
 #text{
-  height:200px;
+  height:auto;
   width:300px;
   background:#fff;
   background:rgba(255,255,255,0.75);
@@ -66,6 +66,38 @@ h1 {
   text-transform: uppercase;
   color: white;
   text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #ff00de, 0 0 9px #ff00de, 0 0 10px #ff00de, 0 0 12px #ff00de, 0 0 15px #ff00de;
+}
+
+#total_raised{
+  margin-top:20px;
+  width:300px;
+  color:#fff;
+  padding:20px;
+  @include rounded();
+  border: 3px solid #fff;
+  text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #66ff00, 
+               0 0 9px #66ff00, 0 0 10px #66ff00, 0 0 12px #66ff00, 0 0 15px #66ff00;
+
+  box-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #66ff00, 
+              0 0 9px #66ff00, 0 0 10px #66ff00, 0 0 12px #66ff00, 0 0 15px #66ff00, 
+              inset 0 0 2px #fff, inset 0 0 4px #fff, inset 0 0 6px #fff, inset 0 0 8px #66ff00, 
+              inset 0 0 9px #66ff00, inset 0 0 10px #66ff00, inset 0 0 12px #66ff00, inset 0 0 15px #66ff00;
+
+  p {
+    font-size:1.8em;
+    margin:0;
+    text-transform:uppercase;
+  }
+
+  #current, #target{
+    font-size:4em;
+    margin-bottom:1em;
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #00ffff, 
+                 0 0 9px #00ffff, 0 0 10px #00ffff, 0 0 12px #00ffff, 0 0 15px #00ffff;
+  }
+  #target{
+    font-size:3em;
+  }
 }
 
 a#donate_btn {
@@ -103,3 +135,4 @@ a#donate_btn:hover{
               inset 0 0 2px #fff, inset 0 0 4px #fff, inset 0 0 6px #fff, inset 0 0 8px #66ff00, 
               inset 0 0 9px #66ff00, inset 0 0 10px #66ff00, inset 0 0 12px #66ff00, inset 0 0 15px #66ff00;
 }
+
