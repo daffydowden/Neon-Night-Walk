@@ -59,6 +59,8 @@ class Whizzrun < Padrino::Application
   #     render 'errors/505'
   #   end
   #
+
+  # Default Application Route
   get '/' do
     render :index
   end
@@ -75,7 +77,7 @@ class Whizzrun < Padrino::Application
     @details.to_json
   end
 
-  #Convert SCSS to CSS
+  # Convert SCSS to CSS
   get '/stylesheets/default.css' do
     scss 'stylesheets/default'
   end

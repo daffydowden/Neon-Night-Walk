@@ -1,3 +1,16 @@
+// Rounded Corner helper
+@mixin rounded($radius: 10px) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+// Box Shadow
+@mixin box-shadow( $h-length, $v-length, $blur, $spread, $color){
+  -moz-box-shadow: $h-length $v-length $blur $spread $color;
+  -webkit-box-shadow: $h-length $v-length $blur $spread $color;
+  box-shadow: $h-length $v-length $blur $spread $color;
+}
+
 html {
   height: auto;
 }
@@ -25,17 +38,27 @@ body {
   }
 }
 
+#container{
+  position:relative;
+  z-index:1;
+  top:20px;
+  left:20px;
+  width:300px;
+}
+
 #text{
   height:200px;
   width:300px;
-  position:absolute;
-  top:20px;
-  left:20px;
-  z-index:1;
   background:#fff;
   background:rgba(255,255,255,0.75);
-  color:#222;
+  color:#666;
   padding:20px;
+
+  @include rounded();
+  border: 3px solid #fff;
+  box-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #ff00de, 0 0 9px #ff00de, 0 0 10px #ff00de, 0 0 12px #ff00de, 0 0 15px #ff00de, 
+              inset 0 0 2px #fff, inset 0 0 4px #fff, inset 0 0 6px #fff, inset 0 0 8px #ff00de, inset 0 0 9px #ff00de, inset 0 0 10px #ff00de, inset 0 0 12px #ff00de, inset 0 0 15px #ff00de;
+
 }
 h1 {
   font-weight:normal;
@@ -43,4 +66,40 @@ h1 {
   text-transform: uppercase;
   color: white;
   text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #ff00de, 0 0 9px #ff00de, 0 0 10px #ff00de, 0 0 12px #ff00de, 0 0 15px #ff00de;
+}
+
+a#donate_btn {
+  margin-top:20px;
+  text-transform:uppercase;
+  font-size:1.6em;
+  letter-spacing: 4px;
+  display:block;
+  z-index: 1;
+  float:left;
+  clear:both;
+  text-decoration:none;
+  width:316px;
+  text-align:center;  
+  padding:12px;
+  color:#fff;
+  @include rounded();
+  border: 3px solid #fff;
+  text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #ff00de, 
+               0 0 9px #ff00de, 0 0 10px #ff00de, 0 0 12px #ff00de, 0 0 15px #ff00de;
+
+  box-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #ff00de, 
+              0 0 9px #ff00de, 0 0 10px #ff00de, 0 0 12px #ff00de, 0 0 15px #ff00de, 
+              inset 0 0 2px #fff, inset 0 0 4px #fff, inset 0 0 6px #fff, inset 0 0 8px #ff00de, 
+              inset 0 0 9px #ff00de, inset 0 0 10px #ff00de, inset 0 0 12px #ff00de, inset 0 0 15px #ff00de;
+}
+
+a#donate_btn:hover{
+  border: 3px solid #fff;
+  text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #66ff00, 
+               0 0 9px #66ff00, 0 0 10px #66ff00, 0 0 12px #66ff00, 0 0 15px #66ff00;
+
+  box-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #66ff00, 
+              0 0 9px #66ff00, 0 0 10px #66ff00, 0 0 12px #66ff00, 0 0 15px #66ff00, 
+              inset 0 0 2px #fff, inset 0 0 4px #fff, inset 0 0 6px #fff, inset 0 0 8px #66ff00, 
+              inset 0 0 9px #66ff00, inset 0 0 10px #66ff00, inset 0 0 12px #66ff00, inset 0 0 15px #66ff00;
 }
