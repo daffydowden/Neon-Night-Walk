@@ -36,14 +36,6 @@ class Whizzrun < Padrino::Application
   # disable :sessions           # Disabled sessions by default (enable if needed)
   # disable :flash              # Disables rack-flash (enabled by default if Rack::Flash is defined)
   # layout  :my_layout          # Layout can be in views/layouts/foo.ext or views/foo.ext (default :application)
-  if Padrino.env == :production
-     Sass::Plugin.options[:never_update] = true
-  end
-
-  # right before
-  Compass.configure_sass_plugin!
-  Compass.handle_configuration_change!
-
 
   ##
   # You can configure for a specified environment like:
@@ -84,7 +76,7 @@ class Whizzrun < Padrino::Application
   end
 
   # Convert SCSS to CSS
-  get '/stylesheets/default.css' do
-    scss 'stylesheets/default'
-  end
+  # get '/stylesheets/default.css' do
+  #   scss 'stylesheets/default'
+  # end
 end
