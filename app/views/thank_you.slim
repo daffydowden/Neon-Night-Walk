@@ -25,15 +25,27 @@
       a#twitter href="http://www.twitter.com" title="Post on Twitter"
       a#facebook href="http://www.facebook.com" title="Post on your Facebook wall"
 
+  #overlay
+    #lightbox
+
   script src="http://platform.twitter.com/anywhere.js?id=bBGPFyzkn6ICebj3bYNAQQ&v=1" type="text/javascript"
   javascript:
-    twttr.anywhere(function (T) {
-      T("#twitter").tweetBox({
-        height: 100,
-        width: 400,
-        defaultContent: "I just donated to Team Sparklemotion"
+    $(document).ready(function(){
+      $('#twitter').click(function(){
+        $('#lightbox').show();
+        twttr.anywhere(function (T) {
+          T("#lightbox").tweetBox({
+            height: 100,
+            width: 400,
+            defaultContent: "I just donated to Team Sparklemotion, you can donate too at: http://neonnightwalk.co.uk",
+            label: "Message:"
+          });
+        }); 
+        $('#overlay').click(function(){
+          $(this).hide();
+        });
+        return false;
       });
-
     });
   
   script src="'//connect.facebook.net/en_US/all.js';" type="text/javascript"

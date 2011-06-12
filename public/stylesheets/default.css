@@ -147,3 +147,23 @@ a#donate_btn:hover {
       background: url("../images/twitter-logo-square-neon.png") no-repeat 0 0; }
     #thanks-container #social-networks #facebook {
       background: url("../images/facebook-logo-square-neon.png") no-repeat 0 0; }
+
+#overlay {
+  background: #000;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none; }
+  #overlay #lightbox {
+    width: 400px;
+    padding: 20px;
+    background: #fff;
+    height: auto;
+    margin: 60px auto;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px; }
