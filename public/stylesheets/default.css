@@ -37,7 +37,7 @@ body {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border: 3px solid #fff;
-  box-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #ff00de, 0 0 9px #ff00de, 0 0 10px #ff00de, 0 0 12px #ff00de, 0 0 15px #ff00de,                inset 0 0 2px #fff, inset 0 0 4px #fff, inset 0 0 6px #fff, inset 0 0 8px #ff00de, inset 0 0 9px #ff00de, inset 0 0 10px #ff00de, inset 0 0 12px #ff00de, inset 0 0 15px #ff00de; }
+  box-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #FFFF00,                  0 0 9px #FFFF00, 0 0 10px #FFFF00, 0 0 12px #FFFF00, 0 0 15px #FFFF00,                  inset 0 0 2px #fff, inset 0 0 4px #fff, inset 0 0 6px #fff, inset 0 0 8px #FFFF00,                  inset 0 0 9px #FFFF00, inset 0 0 10px #FFFF00, inset 0 0 12px #FFFF00, inset 0 0 15px #FFFF00; }
 
 h1 {
   font-weight: normal;
