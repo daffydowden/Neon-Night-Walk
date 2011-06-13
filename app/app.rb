@@ -7,6 +7,15 @@ class Whizzrun < Padrino::Application
 
   require 'open-uri'
   require 'json'
+
+  configure :development do
+    require 'sass'
+
+    # Convert SCSS to CSS
+    get '/stylesheets/default.css' do
+      scss 'stylesheets/default'
+    end
+  end
   configure :production do
     require 'newrelic_rpm'
     require 'hoptoad_notifier'
@@ -90,9 +99,4 @@ class Whizzrun < Padrino::Application
 
     @details.to_json
   end
-
-  # Convert SCSS to CSS
-  # get '/stylesheets/default.css' do
-  #   scss 'stylesheets/default'
-  # end
 end

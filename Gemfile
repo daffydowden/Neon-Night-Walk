@@ -10,6 +10,10 @@ gem 'heroku'
 gem 'newrelic_rpm'
 gem 'hoptoad_notifier'
 
+group :development do
+  gem 'localtunnel'
+end
+
 # Component requirements
 gem 'sass'
 gem 'slim', "~> 0.9.2"

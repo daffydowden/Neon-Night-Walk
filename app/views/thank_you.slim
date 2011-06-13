@@ -27,49 +27,72 @@
 
   #overlay
     #lightbox
+  #fb-root
 
   script src="http://platform.twitter.com/anywhere.js?id=bBGPFyzkn6ICebj3bYNAQQ&v=1" type="text/javascript"
+  script src="//connect.facebook.net/en_US/all.js" type="text/javascript"
   javascript:
     $(document).ready(function(){
+      // Twitter Sharing
       $('#twitter').click(function(){
-        $('#lightbox').show();
+        $('#overlay').show();
         twttr.anywhere(function (T) {
           T("#lightbox").tweetBox({
             height: 100,
             width: 400,
             defaultContent: "I just donated to Team Sparklemotion, you can donate too at: http://neonnightwalk.co.uk",
-            label: "Message:"
+            label: "Your Tweet:",
+            onTweet: function(){
+              $('#overlay').trigger('click');
+            }
           });
         }); 
-        $('#overlay').click(function(){
-          $(this).hide();
-        });
         return false;
       });
-    });
-  
-  script src="'//connect.facebook.net/en_US/all.js';" type="text/javascript"
-  javascript:
-    $(document).ready(function(){
+
+      // Facebook sharing
+      FB.init({
+        appId  : '178983335493009',
+        status : true, // check login status
+        cookie : true, // enable cookies to allow the server to access the session
+        xfbml  : true  // parse XFBML
+      });
+      // On clicking the button login
       $('#facebook').click(function(){
-        FB.ui(
-        {
-            method: 'feed',
-          name: 'Facebook Dialogs',
-          link: 'http://developers.facebook.com/docs/reference/dialogs/',
-          picture: 'http://fbrell.com/f8.jpg',
-          caption: 'Reference Documentation',
-          description: 'Dialogs provide a simple, consistent interface for applications to interface with users.',
-          message: 'Facebook Dialogs are easy!'
-          },
-          function(response) {
-            if (response && response.post_id) {
-               alert('Post was published.');
+        FB.login(function(response) {
+          if (response.session) {
+            if (response.perms) {
+              // user is logged in and granted some permissions.
+              // perms is a comma separated list of granted permissions
+              FB.ui(
+              {
+                method: 'feed',
+                name: 'I just donated to the Whizz-Kidz Neon Night Walk',
+                link: 'http://neonnightwalk.co.uk/',
+                picture: 'http://neonnightwalk.co.uk/images/purple-neon-smiley-happy.png',
+                description: 'On July 1st 2011 Team Sparklemotion will be participating in a 20 mile Neon Night Walk in order to raise money for the Whizz-Kidz charity. Please help us to meet our target by donating through our web-page.',
+                message: ''
+                },
+                function(response) {
+                  if (response && response.post_id) {
+                    //alert('Post was published.');
+                  } else {
+                    //alert('Post was not published.');
+                  }
+                }
+              );
             } else {
-              alert('Post was not published.');
+              // user is logged in, but did not grant any permissions
             }
+          } else {
+            // user is not logged in
           }
-        );
+        }, {perms:'publish_stream'});
         return false;
+      });
+
+      // Hide lightbox and tidy up
+      $('#overlay').click(function(){
+        $(this).hide().children('#lightbox').children().remove();
       });
     });

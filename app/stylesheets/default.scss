@@ -97,8 +97,8 @@ p{
   #current, #target{
     font-size:4em;
     margin-bottom:1em;
-    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #00ffff, 
-                 0 0 9px #00ffff, 0 0 10px #00ffff, 0 0 12px #00ffff, 0 0 15px #00ffff;
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #0cyanff, 
+                 0 0 9px #0cyanff, 0 0 10px #0cyanff, 0 0 12px #0cyanff, 0 0 15px #0cyanff;
   }
   #target{
     font-size:3em;
@@ -230,5 +230,9 @@ a#donate_btn:hover{
     height:auto;
     margin:60px auto;
     @include rounded();
+    box-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px cyan, 
+              0 0 9px cyan, 0 0 10px cyan, 0 0 12px cyan, 0 0 15px cyan, 
+              inset 0 0 2px #fff, inset 0 0 4px #fff, inset 0 0 6px #fff, inset 0 0 8px cyan, 
+              inset 0 0 9px cyan, inset 0 0 10px cyan, inset 0 0 12px cyan, inset 0 0 15px cyan;
   }
 }
