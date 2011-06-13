@@ -8,6 +8,7 @@ gem 'nokogiri'
 gem 'json'
 gem 'heroku'
 gem 'newrelic_rpm'
+gem 'hoptoad_notifier'
 
 # Component requirements
 gem 'sass'
