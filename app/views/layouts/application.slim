@@ -4,6 +4,10 @@ html
     title = yield_content(:title) || "WhizzRun"
     link href="stylesheets/default.css" type="text/css" rel="stylesheet" media="screen"
     == javascript_include_tag :jquery
+    /[if IE]
+      / ==javascript_include_tag 'PIE.js'
+      link href="stylesheets/ie.css" type="text/css" rel="stylesheet" media="screen"
+    
   body
     #map_canvas
     == yield_content :body
