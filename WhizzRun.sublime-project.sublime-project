@@ -31,7 +31,7 @@
 			"file": "/Users/Richard/Documents/Projects/whizzRun/app/views/layouts/application.slim",
 			"settings":
 			{
-				"buffer_size": 335,
+				"buffer_size": 365,
 				"line_ending": "Unix"
 			}
 		},
@@ -39,7 +39,7 @@
 			"file": "/Users/Richard/Documents/Projects/whizzRun/app/views/thank_you.slim",
 			"settings":
 			{
-				"buffer_size": 596,
+				"buffer_size": 2337,
 				"line_ending": "Unix"
 			}
 		},
@@ -55,7 +55,7 @@
 			"file": "/Users/Richard/Documents/Projects/whizzRun/app/stylesheets/default.scss",
 			"settings":
 			{
-				"buffer_size": 4769,
+				"buffer_size": 6229,
 				"line_ending": "Unix"
 			}
 		},
@@ -63,7 +63,7 @@
 			"file": "/Users/Richard/Documents/Projects/whizzRun/public/javascripts/application.js",
 			"settings":
 			{
-				"buffer_size": 9833,
+				"buffer_size": 9857,
 				"line_ending": "Unix"
 			}
 		}
@@ -333,7 +333,7 @@
 					"file": "/Users/Richard/Documents/Projects/whizzRun/app/views/layouts/application.slim",
 					"settings":
 					{
-						"buffer_size": 335,
+						"buffer_size": 365,
 						"regions":
 						{
 						},
@@ -361,20 +361,22 @@
 					"file": "/Users/Richard/Documents/Projects/whizzRun/app/views/thank_you.slim",
 					"settings":
 					{
-						"buffer_size": 596,
+						"buffer_size": 2337,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								595,
-								595
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0,
 						"translation.y": 0,
@@ -413,7 +415,7 @@
 			]
 		},
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -421,15 +423,15 @@
 					"file": "/Users/Richard/Documents/Projects/whizzRun/app/stylesheets/default.scss",
 					"settings":
 					{
-						"buffer_size": 4769,
+						"buffer_size": 6229,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4763,
-								4763
+								1359,
+								1359
 							]
 						],
 						"settings":
@@ -439,7 +441,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0,
-						"translation.y": 1371,
+						"translation.y": 499,
 						"zoom_level": 1
 					},
 					"type": "text"
@@ -449,15 +451,15 @@
 					"file": "/Users/Richard/Documents/Projects/whizzRun/public/javascripts/application.js",
 					"settings":
 					{
-						"buffer_size": 9833,
+						"buffer_size": 9857,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1510,
-								1510
+								0,
+								0
 							]
 						],
 						"settings":
@@ -466,8 +468,8 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0,
-						"translation.y": 273,
+						"translation.x": 55,
+						"translation.y": 2719,
 						"zoom_level": 1
 					},
 					"type": "text"
@@ -495,7 +497,7 @@
 		"cols":
 		[
 			0,
-			0.580856565522,
+			0.415959184064,
 			1
 		],
 		"rows":
