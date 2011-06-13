@@ -7,6 +7,7 @@ gem 'thin' # or mongrel
 gem 'nokogiri'
 gem 'json'
 gem 'heroku'
+gem 'newrelic_rpm'
 
 # Component requirements
 gem 'sass'

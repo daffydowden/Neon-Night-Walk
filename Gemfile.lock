@@ -26,6 +26,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    newrelic_rpm (3.0.1)
     nokogiri (1.4.4)
     padrino (0.9.28)
       padrino-admin (= 0.9.28)
@@ -90,6 +91,7 @@ PLATFORMS
 DEPENDENCIES
   heroku
   json
+  newrelic_rpm
   nokogiri
   padrino (= 0.9.28)
   rack-flash

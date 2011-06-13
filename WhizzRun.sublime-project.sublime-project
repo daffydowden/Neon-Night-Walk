@@ -31,7 +31,7 @@
 			"file": "/Users/Richard/Documents/Projects/whizzRun/app/views/layouts/application.slim",
 			"settings":
 			{
-				"buffer_size": 365,
+				"buffer_size": 843,
 				"line_ending": "Unix"
 			}
 		},
@@ -297,7 +297,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -333,15 +333,15 @@
 					"file": "/Users/Richard/Documents/Projects/whizzRun/app/views/layouts/application.slim",
 					"settings":
 					{
-						"buffer_size": 365,
+						"buffer_size": 843,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								498,
+								498
 							]
 						],
 						"settings":
@@ -497,7 +497,7 @@
 		"cols":
 		[
 			0,
-			0.415959184064,
+			0.621903982365,
 			1
 		],
 		"rows":

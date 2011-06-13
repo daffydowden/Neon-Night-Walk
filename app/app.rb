@@ -7,6 +7,9 @@ class Whizzrun < Padrino::Application
 
   require 'open-uri'
   require 'json'
+  configure :production do
+    require 'newrelic_rpm'
+  end
   ##
   # Caching support
   #
