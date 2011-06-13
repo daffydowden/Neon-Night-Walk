@@ -23,7 +23,7 @@
 			"file": "/Users/Richard/Documents/Projects/whizzRun/app/app.rb",
 			"settings":
 			{
-				"buffer_size": 3034,
+				"buffer_size": 3220,
 				"line_ending": "Unix"
 			}
 		},
@@ -31,7 +31,7 @@
 			"file": "/Users/Richard/Documents/Projects/whizzRun/app/views/layouts/application.slim",
 			"settings":
 			{
-				"buffer_size": 365,
+				"buffer_size": 843,
 				"line_ending": "Unix"
 			}
 		},
@@ -47,7 +47,15 @@
 			"file": "/Users/Richard/Documents/Projects/whizzRun/app/views/index.slim",
 			"settings":
 			{
-				"buffer_size": 1268,
+				"buffer_size": 1210,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Richard/Documents/Projects/whizzRun/Gemfile",
+			"settings":
+			{
+				"buffer_size": 291,
 				"line_ending": "Unix"
 			}
 		},
@@ -55,7 +63,7 @@
 			"file": "/Users/Richard/Documents/Projects/whizzRun/app/stylesheets/default.scss",
 			"settings":
 			{
-				"buffer_size": 6229,
+				"buffer_size": 3988,
 				"line_ending": "Unix"
 			}
 		},
@@ -71,10 +79,10 @@
 	"build_system": "",
 	"file_history":
 	[
+		"/Users/Richard/Documents/Projects/whizzRun/Gemfile",
 		"/Users/Richard/Documents/Projects/whizzRun/public/javascripts/LondonMarathonRoute.js",
 		"/Users/Richard/Documents/Projects/whizzRun/app/views/index.slim",
 		"/Users/Richard/Documents/Projects/whizzRun/.gitignore",
-		"/Users/Richard/Documents/Projects/whizzRun/Gemfile",
 		"/Users/Richard/Documents/Projects/whizzRun/public/stylesheets/default.css",
 		"/Users/Richard/Documents/Projects/whizzRun/app/stylesheets/default.scss",
 		"/Users/Richard/Documents/Projects/whizzRun/WhizzRun.sublime-project.sublime-project",
@@ -297,7 +305,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -305,15 +313,15 @@
 					"file": "/Users/Richard/Documents/Projects/whizzRun/app/app.rb",
 					"settings":
 					{
-						"buffer_size": 3034,
+						"buffer_size": 3220,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2416,
-								2416
+								408,
+								408
 							]
 						],
 						"settings":
@@ -323,7 +331,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0,
-						"translation.y": 0,
+						"translation.y": 1,
 						"zoom_level": 1
 					},
 					"type": "text"
@@ -333,15 +341,15 @@
 					"file": "/Users/Richard/Documents/Projects/whizzRun/app/views/layouts/application.slim",
 					"settings":
 					{
-						"buffer_size": 365,
+						"buffer_size": 843,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								75,
+								75
 							]
 						],
 						"settings":
@@ -389,15 +397,15 @@
 					"file": "/Users/Richard/Documents/Projects/whizzRun/app/views/index.slim",
 					"settings":
 					{
-						"buffer_size": 1268,
+						"buffer_size": 1210,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1251,
-								1251
+								147,
+								151
 							]
 						],
 						"settings":
@@ -405,6 +413,32 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0,
+						"translation.y": 0,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/Richard/Documents/Projects/whizzRun/Gemfile",
+					"settings":
+					{
+						"buffer_size": 291,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								40,
+								40
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0,
 						"translation.y": 0,
@@ -419,19 +453,19 @@
 			"sheets":
 			[
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "/Users/Richard/Documents/Projects/whizzRun/app/stylesheets/default.scss",
 					"settings":
 					{
-						"buffer_size": 6229,
+						"buffer_size": 3988,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1359,
-								1359
+								0,
+								0
 							]
 						],
 						"settings":
@@ -447,7 +481,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "/Users/Richard/Documents/Projects/whizzRun/public/javascripts/application.js",
 					"settings":
 					{
@@ -497,7 +531,7 @@
 		"cols":
 		[
 			0,
-			0.415959184064,
+			0.621903982365,
 			1
 		],
 		"rows":
@@ -514,16 +548,16 @@
 		"selected_items":
 		[
 			[
+				"gem",
+				"Gemfile"
+			],
+			[
 				"inde",
 				"app/views/index.slim"
 			],
 			[
 				"git",
 				".gitignore"
-			],
-			[
-				"gem",
-				"Gemfile"
 			],
 			[
 				"scss",

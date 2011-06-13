@@ -7,6 +7,17 @@ class Whizzrun < Padrino::Application
 
   require 'open-uri'
   require 'json'
+  configure :production do
+    require 'newrelic_rpm'
+    require 'hoptoad_notifier'
+
+    HoptoadNotifier.configure do |config|
+      config.api_key = '911a7b0fdcddf4908dcf3cf4a91586ac'
+    end
+
+    use HoptoadNotifier::Rack
+    enable :raise_errors
+  end
   ##
   # Caching support
   #
