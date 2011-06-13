@@ -1,0 +1,3 @@
+#container, #text, #thanks-text, h1, #total_raised, #total_raised p, #current, #target, #donate_btn, #donate_btn:hover, #lightbox{
+  behavior: url('/javascripts/PIE.htc');
+}
