@@ -1,3 +1,21 @@
-#container, #text, #thanks-text, h1, #total_raised, #total_raised p, #current, #target, #donate_btn, #donate_btn:hover, #lightbox{
+
+#container, #thanks-container, #text, #thanks-text, h1, #total_raised, #total_raised p, #current, #target, #donate_btn, #donate_btn:hover, #lightbox{
   behavior: url('/javascripts/PIE.htc');
+}
+
+h1, #text, #thanks-text, #total_raised, a#donate_btn, #overlay{
+  color:#fff;
+}
+
+#thanks-container{
+  overflow:hidden;
+  padding:20px;
+}
+
+#thanks-container #total_raised{
+  height:120px;
+}
+
+#total_raised{
+  clear:both;
 }
