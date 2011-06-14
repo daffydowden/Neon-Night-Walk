@@ -248,7 +248,7 @@ $(document).ready(function(){
 
   // Marker sprite positions
   var marker_off_origins = [new google.maps.Point(6,86),new google.maps.Point(66,86),new google.maps.Point(126,86),new google.maps.Point(186,86),new google.maps.Point(246,86),new google.maps.Point(306,86),new google.maps.Point(366,86),new google.maps.Point(426,86),new google.maps.Point(486,86)];
-  var marker_on_origins = [new google.maps.Point(6,6),new google.maps.Point(66,6),new google.maps.Point(126,6),new google.maps.Point(186,6),new google.maps.Point(246,6),new google.maps.Point(306,6),new google.maps.Point(366,6),new google.maps.Point(426,6),new google.maps.Point(486,6)];
+  var marker_on_origins = [new google.maps.Point(1,3),new google.maps.Point(61,3),new google.maps.Point(121,3),new google.maps.Point(181,3),new google.maps.Point(241,3),new google.maps.Point(301,3),new google.maps.Point(361,3),new google.maps.Point(421,3),new google.maps.Point(481,3)];
 
   // Add % markers to the map
   $(completeRoute.PercentMarkers()).each(function(index,value){
@@ -270,9 +270,9 @@ $(document).ready(function(){
       // past marker
       var marker_image = new google.maps.MarkerImage(
         'images/neonMapMarkers_sprite.png',
-        new google.maps.Size(43,68),
+        new google.maps.Size(53,71),
         marker_on_origins[index], 
-        new google.maps.Point(22,65)
+        new google.maps.Point(27,65)
       );
 
       var marker = new google.maps.Marker({
@@ -286,9 +286,9 @@ $(document).ready(function(){
   // Add current position marker to map
   var current_position_marker_image = new google.maps.MarkerImage(
     'images/neonMapMarkers_sprite.png',
-    new google.maps.Size(73,100), // Size
-    new google.maps.Point(644,6), // Origin
-    new google.maps.Point(37,94) // Anchor
+    new google.maps.Size(85,110), // Size
+    new google.maps.Point(636,0), // Origin
+    new google.maps.Point(43,94) // Anchor
   );
   var current_position_marker = new google.maps.Marker({
     position: new google.maps.LatLng(marathonRoute[current_location][0],marathonRoute[current_location][1]),
