@@ -321,4 +321,12 @@ $(document).ready(function(){
   // Set the maps center to be the current percentage
   map.setCenter(new google.maps.LatLng(marathonRoute[current_location][0],marathonRoute[current_location][1]));
 
+  // Handle resize of map
+  function viewport_resize(){
+    $('#map_canvas').height($(document).height());
+  };
+  viewport_resize();
+  $(window).resize(function(){
+    viewport_resize();
+  });
 });
