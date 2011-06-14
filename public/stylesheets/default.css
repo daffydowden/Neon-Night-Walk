@@ -4,7 +4,7 @@ html {
 body {
   height: auto;
   margin: 0;
-  padding: 0;
+  padding: 0 0 20px;
   font-family: helvetica, arial, san-serif; }
 
 #map_canvas {
@@ -82,14 +82,14 @@ p {
   #total_raised #current, #total_raised #target {
     font-size: 4em;
     margin-bottom: 1em;
-    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #0cyanff,                   0 0 9px #0cyanff, 0 0 10px #0cyanff, 0 0 12px #0cyanff, 0 0 15px #0cyanff; }
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #00ffff,                   0 0 9px #00ffff, 0 0 10px #00ffff, 0 0 12px #00ffff, 0 0 15px #00ffff; }
   #total_raised #target {
     font-size: 3em; }
 
 a#donate_btn {
   background: #000;
   background: rgba(0, 0, 0, 0.5);
-  margin-top: 20px;
+  margin: 20px 0;
   text-transform: uppercase;
   font-size: 1.6em;
   letter-spacing: 4px;
@@ -117,7 +117,8 @@ a#donate_btn:hover {
 #thanks-container {
   width: 540px;
   margin: 60px auto;
-  position: relative; }
+  position: relative;
+  z-index: 1; }
   #thanks-container h1 {
     background: #000;
     background: rgba(0, 0, 0, 0.5);
