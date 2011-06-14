@@ -6,16 +6,21 @@
 h1, #text, #thanks-text, #total_raised, a#donate_btn, #overlay{
   color:#fff;
 }
-
-#thanks-container{
-  overflow:hidden;
-  padding:20px;
+/* Home page specific */
+#container #total_raised{
+  height:210px !important;
+  margin-bottom:20px !important;
 }
-
+/* Thank-you page specific */
+#thanks-container{padding-top:60px;}
+#thanks-container h1, #thanks-container #total_raised, #thanks-container #thanks-text, #thanks-container #social-networks{
+  position:absolute;
+  display:block;
+}
+#thanks-container h1{top:20px;}
 #thanks-container #total_raised{
-  height:120px;
+  top:170px;
+  height:120px !important;
 }
-
-#total_raised{
-  clear:both;
-}
+#thanks-container #thanks-text{top:370px;}
+#thanks-container #social-networks{top:540px;}
